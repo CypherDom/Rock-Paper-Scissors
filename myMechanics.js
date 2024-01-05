@@ -4,6 +4,11 @@ const getComputerChoice = () => {
     return choice[Math.floor(Math.random()* choice.length)];
 }
 
+const formatPlayerSelection = (inputString) => {
+    
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1).toLowerCase();
+
+}
 
 const playRound = (playerSelection, computerSelection) => {
     let player = playerSelection;
@@ -18,17 +23,18 @@ const playRound = (playerSelection, computerSelection) => {
      player === 'Scissors' && computer === 'Paper'){
 
         return 'Player';
-     }
-     else if
+    }
+    else if
     (computer === 'Rock' && player === 'Scissors' || 
-    computer === 'Paper' && player === 'Rock' ||
-    computer === 'Scissors' && player === 'Paper'){
+     computer === 'Paper' && player === 'Rock' ||
+     computer === 'Scissors' && player === 'Paper'){
 
         return 'Computer';
-     }
+    }
     
 }
 
-let playerSelection = 'Rock';
+let playerInput = "rOck";
+let playerSelection = formatPlayerSelection(playerInput);
 let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
