@@ -10,11 +10,17 @@ const formatPlayerSelection = (inputString) => {
 
 }
 
+const resetRound = () => {
+    let player = null;
+    let computer = null;
+}
+
 const playRound = (playerSelection, computerSelection) => {
     let player = playerSelection;
     let computer = computerSelection;
 
     if(player === computer){
+        resetRound();
         return 'Tied';
     }
     else if
@@ -34,7 +40,7 @@ const playRound = (playerSelection, computerSelection) => {
     
 }
 
-let playerInput = "rOck";
+let playerInput = "rOCk";
 let playerSelection = formatPlayerSelection(playerInput);
 let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
